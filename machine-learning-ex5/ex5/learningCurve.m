@@ -52,14 +52,14 @@ error_val   = zeros(m, 1);
 %
 
 % ---------------------- Sample Solution ----------------------
-%for i = 1:m
-%    Xi = X(1:i, :);
-%    yi = y(1:i);
-%    lambdai = 0;
-%    thetai  = trainLinearReg(Xi, yi, lambdai);
-%    error_train(i) = linearRegCostFunction(Xi, yi, thetai, lambdai);
-%    error_val(i)   = linearRegCostFunction(Xval, yval, thetai, lambdai);
-%end
+for i = 1:m
+    Xi = X(1:i, :);
+    yi = y(1:i);
+    thetai  = trainLinearReg(Xi, yi, lambda);
+    lambdai = 0;
+    error_train(i) = linearRegCostFunction(Xi, yi, thetai, lambdai);
+    error_val(i)   = linearRegCostFunction(Xval, yval, thetai, lambdai);
+end
 
 
 % -------------------------------------------------------------
